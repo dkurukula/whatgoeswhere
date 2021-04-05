@@ -1,3 +1,7 @@
+# Waste Wizard
+
+A web app for searching where to put waste at UHN
+
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
 

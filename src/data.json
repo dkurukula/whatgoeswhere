@@ -1,0 +1,250 @@
+[
+    {
+        "item": "Plastic bag",
+        "bin": "Garbage"
+    },
+    {
+        "item": "Food",
+        "bin": "Green bin"
+    },
+    {
+        "item": "Electronics",
+        "bin": "Schedule a bulky item pickup or check earth911.com for a local drop off site"
+    },
+    {
+        "item": "Small appliances",
+        "bin": "Schedule a bulky item pickup or check earth911.com for a local drop off site"
+    },
+    {
+        "item": "Extension cords",
+        "bin": "Garbage"
+    },
+    {
+        "item": "Paper napkins",
+        "bin": "Green bin"
+    },
+    {
+        "item": "Paper plates",
+        "bin": "Green bin"
+    },
+    {
+        "item": "Tissues",
+        "bin": "Green bin"
+    },
+    {
+        "item": "Polystyrene foam (styrofoam)",
+        "bin": "Garbage"
+    },
+    {
+        "item": "Plastic to-go containers",
+        "bin": "Garbage"
+    },
+    {
+        "item": "Empty bottles",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Jugs",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Tubs",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Empty cans",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Paper",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Cardboard",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Soiled paper goods",
+        "bin": "Green bin"
+    },
+    {
+        "item": "Compostable wooden utensils",
+        "bin": "Green bin"
+    },
+    {
+        "item": "Compostable paper plates",
+        "bin": "Green bin"
+    },
+    {
+        "item": "Compostable cups",
+        "bin": "Green bin"
+    },
+    {
+        "item": "Coffee grounds and filters",
+        "bin": "Green bin"
+    },
+    {
+        "item": "Tea bags",
+        "bin": "Green bin"
+    },
+    {
+        "item": "Soiled paper bags",
+        "bin": "Green bin"
+    },
+    {
+        "item": "Paper towels",
+        "bin": "Green bin"
+    },
+    {
+        "item": "Napkins",
+        "bin": "Green bin"
+    },
+    {
+        "item": "Uncoated takeout containers",
+        "bin": "Green bin"
+    },
+    {
+        "item": "Plastic bottles",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Plastic containers",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Food and beverage cartons",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Flattened cardboard",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Flattened paperboard",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Foam takeout containers",
+        "bin": "Garbage"
+    },
+    {
+        "item": "Foam cups",
+        "bin": "Garbage"
+    },
+    {
+        "item": "Foam packing materials",
+        "bin": "Garbage"
+    },
+    {
+        "item": "Paper",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Needles",
+        "bin": "Sharps container"
+    },
+    {
+        "item": "Diapers",
+        "bin": "Garbage"
+    },
+    {
+        "item": "Uncoated paper cups",
+        "bin": "Green bin"
+    },
+    {
+        "item": "Envelopes",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Coated paper cups",
+        "bin": "Garbage"
+    },
+    {
+        "item": "Egg cartons",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Coffee cup trays",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Corrugated cardboard",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Boxboard",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Clean IV bags",
+        "bin": "Recycle without other types of recycables"
+    },
+    {
+        "item": "Glass bottles",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Glass jars",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Aluminum plates",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Aluminum trays",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Polystyrene, non-styrofoam containers",
+        "bin": "Garbage"
+    },
+    {
+        "item": "Blue sterilization wrappers",
+        "bin": "Garbage"
+    },
+    {
+        "item": "Juice boxes",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Large plastic hemodialysis drums",
+        "bin": "Recycle without other types of recycables"
+    },
+    {
+        "item": "Metal cans",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Milk cartons",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Plastic cutlery",
+        "bin": "Garbage"
+    },
+    {
+        "item": "Soft plastics (e.g. plastic wrap)",
+        "bin": "Garbage"
+    },
+    {
+        "item": "Pyrex containers",
+        "bin": "Recycle without other types of recycables"
+    },
+    {
+        "item": "Scrap metal",
+        "bin": "Recycle"
+    },
+    {
+        "item": "Plastic straws",
+        "bin": "Garbage"
+    },
+    {
+        "item": "Zippered re-sealable plastic bag",
+        "bin": "Recycle without other types of recycables"
+    },
+    {
+        "item": "Rigid plastics (e.g. pens, toothbrushes, gift cards)",
+        "bin": "Recycle without other types of recycables"
+    }
+]

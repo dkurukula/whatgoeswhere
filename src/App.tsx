@@ -3,14 +3,19 @@ import {
   ChakraProvider,
   Box,
   Text,
-  Link,
   VStack,
-  Code,
   Grid,
+  Heading,
+  Input,
   theme,
+  InputGroup,
+  InputLeftElement,
+  ListItem,
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
+import { FaSearch } from "react-icons/fa"
+import ListView from './components/ListView'
+import items from './data.json'
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -18,19 +23,20 @@ export const App = () => (
       <Grid minH="100vh" p={3}>
         <ColorModeSwitcher justifySelf="flex-end" />
         <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
+        <Heading>Waste Wizard</Heading>
           <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
+            Search where to put your waste.
           </Text>
-          <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Chakra
-          </Link>
+        <InputGroup>
+        <InputLeftElement
+          children={<FaSearch/>}
+        /> 
+        <Input 
+          placeholder="Search" 
+        /> 
+        </InputGroup>
+        <ListView items={items}/>
+
         </VStack>
       </Grid>
     </Box>

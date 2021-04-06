@@ -136,10 +136,6 @@
         "bin": "Garbage"
     },
     {
-        "item": "Paper",
-        "bin": "Recycle"
-    },
-    {
         "item": "Needles",
         "bin": "Sharps container"
     },

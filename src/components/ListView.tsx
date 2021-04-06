@@ -1,15 +1,16 @@
-import * as React from 'react';
-import { List, ListItem, Table, TableCaption, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import { FunctionComponent } from 'react';
+import { Table, TableCaption, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import React from 'react';
 
 interface IListViewProps {
     items: [{item: string, bin: string}]
 }
 
-const ListView: React.FunctionComponent<IListViewProps> = ({items}) => {
+const ListView: FunctionComponent<IListViewProps> = ({items}) => {
     console.log(items)
     return (
         <Table variant="striped" colorScheme="teal">
-            {/* <TableCaption>where to put your waste</TableCaption> */}
+            <TableCaption>where to put your waste</TableCaption>
             <Thead>
                 <Tr>
                     <Th>Item</Th>

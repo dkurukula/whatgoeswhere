@@ -9,12 +9,12 @@ interface IListViewProps {
 const ListView: FunctionComponent<IListViewProps> = ({items}) => {
     console.log(items)
     return (
-        <Table variant="striped" colorScheme="teal">
-            <TableCaption>where to put your waste</TableCaption>
+        <Table variant="striped" colorScheme="gray">
+            <TableCaption></TableCaption>
             <Thead>
                 <Tr>
                     <Th>Item</Th>
-                    <Th>Where to put</Th>
+                    <Th>Bin</Th>
                 </Tr>
             </Thead>
             <Tbody>

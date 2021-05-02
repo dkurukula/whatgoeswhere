@@ -1,246 +1,270 @@
 [
     {
-        "item": "Plastic bag",
-        "bin": "Garbage"
+      "item": "Plastic bag",
+      "bin": "Garbage"
     },
     {
-        "item": "Food",
-        "bin": "Green bin"
+      "item": "Food scraps",
+      "bin": "Organics"
     },
     {
-        "item": "Electronics",
-        "bin": "Schedule a bulky item pickup or check earth911.com for a local drop off site"
+      "item": "Electronics",
+      "bin": "Schedule a bulky item pickup or check earth911.com for a local drop off site"
     },
     {
-        "item": "Small appliances",
-        "bin": "Schedule a bulky item pickup or check earth911.com for a local drop off site"
+      "item": "Small appliances",
+      "bin": "Schedule a bulky item pickup or check earth911.com for a local drop off site"
     },
     {
-        "item": "Extension cords",
-        "bin": "Garbage"
+      "item": "Extension cords",
+      "bin": "Garbage"
     },
     {
-        "item": "Paper napkins",
-        "bin": "Green bin"
+      "item": "Paper napkins",
+      "bin": "Organics"
     },
     {
-        "item": "Paper plates",
-        "bin": "Green bin"
+      "item": "Paper plates",
+      "bin": "Organics"
     },
     {
-        "item": "Tissues",
-        "bin": "Green bin"
+      "item": "Tissues",
+      "bin": "Organics"
     },
     {
-        "item": "Polystyrene foam (styrofoam)",
-        "bin": "Garbage"
+      "item": "Polystyrene foam (styrofoam)",
+      "bin": "Garbage"
     },
     {
-        "item": "Plastic to-go containers",
-        "bin": "Garbage"
+      "item": "Plastic to-go containers",
+      "bin": "Garbage"
     },
     {
-        "item": "Empty bottles",
-        "bin": "Recycle"
+      "item": "Empty bottles",
+      "bin": "Blue bin"
     },
     {
-        "item": "Jugs",
-        "bin": "Recycle"
+      "item": "Jugs",
+      "bin": "Blue bin"
     },
     {
-        "item": "Tubs",
-        "bin": "Recycle"
+      "item": "Tubs",
+      "bin": "Blue bin"
     },
     {
-        "item": "Empty cans",
-        "bin": "Recycle"
+      "item": "Empty cans",
+      "bin": "Blue bin"
     },
     {
-        "item": "Paper",
-        "bin": "Recycle"
+      "item": "Paper",
+      "bin": "Blue bin"
     },
     {
-        "item": "Cardboard",
-        "bin": "Recycle"
+      "item": "Cardboard",
+      "bin": "Blue bin"
     },
     {
-        "item": "Soiled paper goods",
-        "bin": "Green bin"
+      "item": "Soiled paper goods",
+      "bin": "Organics"
     },
     {
-        "item": "Compostable wooden utensils",
-        "bin": "Green bin"
+      "item": "BPI, or equivalent, certified compostable wooden utensils",
+      "bin": "Organics"
     },
     {
-        "item": "Compostable paper plates",
-        "bin": "Green bin"
+      "item": "BPI, or equivalent, certified compostable paper plates",
+      "bin": "Organics"
     },
     {
-        "item": "Compostable cups",
-        "bin": "Green bin"
+      "item": "BPI, or equivalent, certified compostable cups",
+      "bin": "Organics"
     },
     {
-        "item": "Coffee grounds and filters",
-        "bin": "Green bin"
+      "item": "Other BPI, or equivalent, certified compostable products",
+      "bin": "Organics"
     },
     {
-        "item": "Tea bags",
-        "bin": "Green bin"
+      "item": "Other BPI, or equivalent, certified compostable plastic containers",
+      "bin": ""
     },
     {
-        "item": "Soiled paper bags",
-        "bin": "Green bin"
+      "item": "Coffee grounds and filters",
+      "bin": "Organics"
     },
     {
-        "item": "Paper towels",
-        "bin": "Green bin"
+      "item": "Tea bags",
+      "bin": "Organics"
     },
     {
-        "item": "Napkins",
-        "bin": "Green bin"
+      "item": "Soiled paper bags",
+      "bin": "Organics"
     },
     {
-        "item": "Uncoated takeout containers",
-        "bin": "Green bin"
+      "item": "Paper towels",
+      "bin": "Organics"
     },
     {
-        "item": "Plastic bottles",
-        "bin": "Recycle"
+      "item": "Napkins and other tissue type papers",
+      "bin": "Organics"
     },
     {
-        "item": "Plastic containers",
-        "bin": "Recycle"
+      "item": "Uncoated takeout containers",
+      "bin": "Organics"
     },
     {
-        "item": "Food and beverage cartons",
-        "bin": "Recycle"
+      "item": "Plastic bottles",
+      "bin": "Blue bin"
     },
     {
-        "item": "Flattened cardboard",
-        "bin": "Recycle"
+      "item": "Plastic containers",
+      "bin": "Blue bin"
     },
     {
-        "item": "Flattened paperboard",
-        "bin": "Recycle"
+      "item": "Food and beverage cartons",
+      "bin": "Blue bin"
     },
     {
-        "item": "Foam takeout containers",
-        "bin": "Garbage"
+      "item": "Flattened cardboard",
+      "bin": "Blue bin"
     },
     {
-        "item": "Foam cups",
-        "bin": "Garbage"
+      "item": "Flattened paperboard",
+      "bin": "Blue bin"
     },
     {
-        "item": "Foam packing materials",
-        "bin": "Garbage"
+      "item": "Foam takeout containers",
+      "bin": "Garbage"
     },
     {
-        "item": "Needles",
-        "bin": "Sharps container"
+      "item": "Foam cups",
+      "bin": "Garbage"
     },
     {
-        "item": "Diapers",
-        "bin": "Garbage"
+      "item": "Foam packing materials",
+      "bin": "Garbage"
     },
     {
-        "item": "Uncoated paper cups",
-        "bin": "Green bin"
+      "item": "Needles",
+      "bin": "Sharps container"
     },
     {
-        "item": "Envelopes",
-        "bin": "Recycle"
+      "item": "Diapers",
+      "bin": "Garbage"
     },
     {
-        "item": "Coated paper cups",
-        "bin": "Garbage"
+      "item": "Uncoated paper cups (e.g. medicine cups, dixie cups)",
+      "bin": "Organics"
     },
     {
-        "item": "Egg cartons",
-        "bin": "Recycle"
+      "item": "Window envelopes",
+      "bin": "Blue bin"
     },
     {
-        "item": "Coffee cup trays",
-        "bin": "Recycle"
+      "item": "Coated paper cups and drink cups (e.g. Tim Hortons, Starbucks)",
+      "bin": "Garbage"
     },
     {
-        "item": "Corrugated cardboard",
-        "bin": "Recycle"
+      "item": "Egg cartons",
+      "bin": "Blue bin"
     },
     {
-        "item": "Boxboard",
-        "bin": "Recycle"
+      "item": "Corrugated cardboard",
+      "bin": "Blue bin"
     },
     {
-        "item": "Clean IV bags",
-        "bin": "Recycle without other types of recycables"
+      "item": "Boxboard",
+      "bin": "Blue bin"
     },
     {
-        "item": "Glass bottles",
-        "bin": "Recycle"
+      "item": "Clean IV bags (#3 V plastics)",
+      "bin": "Separate collection required: recycle without other types of recycables"
     },
     {
-        "item": "Glass jars",
-        "bin": "Recycle"
+      "item": "Glass bottles",
+      "bin": "Blue bin"
     },
     {
-        "item": "Aluminum plates",
-        "bin": "Recycle"
+      "item": "Glass jars",
+      "bin": "Blue bin"
     },
     {
-        "item": "Aluminum trays",
-        "bin": "Recycle"
+      "item": "Aluminum plates",
+      "bin": "Blue bin"
     },
     {
-        "item": "Polystyrene, non-styrofoam containers",
-        "bin": "Garbage"
+      "item": "Aluminum trays",
+      "bin": "Blue bin"
     },
     {
-        "item": "Blue sterilization wrappers",
-        "bin": "Garbage"
+      "item": "Polystyrene, non-styrofoam containers",
+      "bin": "Garbage"
     },
     {
-        "item": "Juice boxes",
-        "bin": "Recycle"
+      "item": "Blue sterilization wrappers (polypropylene #5 plastic)",
+      "bin": "Garbage"
     },
     {
-        "item": "Large plastic hemodialysis drums",
-        "bin": "Recycle without other types of recycables"
+      "item": "Juice boxes",
+      "bin": "Blue bin"
     },
     {
-        "item": "Metal cans",
-        "bin": "Recycle"
+      "item": "Large plastic hemodialysis drums",
+      "bin": "Separate collection required: recycle without other types of recycables"
     },
     {
-        "item": "Milk cartons",
-        "bin": "Recycle"
+      "item": "Metal cans",
+      "bin": "Blue bin"
     },
     {
-        "item": "Plastic cutlery",
-        "bin": "Garbage"
+      "item": "Milk cartons",
+      "bin": "Blue bin"
     },
     {
-        "item": "Soft plastics (e.g. plastic wrap)",
-        "bin": "Garbage"
+      "item": "Plastic cutlery (hard brittle plastic)",
+      "bin": "Garbage"
     },
     {
-        "item": "Pyrex containers",
-        "bin": "Recycle without other types of recycables"
+      "item": "Plastic films and other soft plastics (e.g. plastic wrap, #4 LDPE, etc.)",
+      "bin": "Garbage"
     },
     {
-        "item": "Scrap metal",
-        "bin": "Recycle"
+      "item": "Pyrex containers",
+      "bin": "Separate collection required: recycle without other types of recycables, including glass bottles and jars"
     },
     {
-        "item": "Plastic straws",
-        "bin": "Garbage"
+      "item": "Scrap metal",
+      "bin": "Blue bin"
     },
     {
-        "item": "Zippered re-sealable plastic bag",
-        "bin": "Recycle without other types of recycables"
+      "item": "Plastic straws",
+      "bin": "Garbage"
     },
     {
-        "item": "Rigid plastics (e.g. pens, toothbrushes, gift cards)",
-        "bin": "Recycle without other types of recycables"
+      "item": "Zippered re-sealable plastic bag",
+      "bin": "Recycle without other types of recycables"
+    },
+    {
+      "item": "Rigid plastics (e.g. pens, toothbrushes, gift cards)",
+      "bin": "Separate collection required: recycle without other types of recycables according to programs for individual products on a per location basis"
+    },
+    {
+      "item": "Animal bedding",
+      "bin": "Organics"
+    },
+    {
+      "item": "Mixed paper (e.g. fine paper, newsprint, etc.)",
+      "bin": "Blue bin"
+    },
+    {
+      "item": "Molded paperboard (e.g. egg cartons, coffee cup trays, etc.)",
+      "bin": "Blue bin"
+    },
+    {
+      "item": "Paper coffee cups",
+      "bin": "Garbage"
+    },
+    {
+      "item": "Hygie-bags (for lining bedpans to contain human waste)",
+      "bin": "Garbage"
     }
-]
+   ]

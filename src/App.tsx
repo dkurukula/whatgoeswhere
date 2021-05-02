@@ -52,13 +52,24 @@ export const App = () => {
 
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
+      <Grid templateColumns="repeat(5, 1fr)" bg="gray.100">
+        <Box m={4} fontSize="lg">What Goes Where</Box>
+        <Box m={5} fontSize="sm" textAlign="left">St. Joseph's Hospital</Box>
+        <Box m={5} fontSize="sm" textAlign="left">St. Michael's Hospital</Box>
+        <Box m={5} fontSize="sm" textAlign="left">Providence Healthcare</Box>
+        <Box m={5} fontSize="sm" textAlign="left">Li Ka Shing Knowledge Institute</Box>
+      </Grid>
+      
+      <Box textAlign="left" fontSize="xl">
+        <Box textAlign="left" marginLeft={8} marginTop={5} fontSize="xl" color="purple">
+          <Heading>St. Michael's Hospital</Heading>
+        </Box>  
+
+        <Grid minH="10vh" p={3}>
           <ColorModeSwitcher justifySelf="flex-end" />
           <VStack spacing={8}>
-            <Heading>Waste Wizard</Heading>
-            <Text>
-              Search where to put your waste.
+            <Text textAlign="left" fontSize="sm">
+              Not sure how to dispose a waste item? Type it into the searchbar below to find out.
             </Text>
             <SearchBar onInput={e => handleSearch(e)} />
             <ListView items={state.searchedItems} />

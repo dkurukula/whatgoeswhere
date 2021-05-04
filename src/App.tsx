@@ -6,10 +6,7 @@ import {
   VStack,
   Grid,
   Heading,
-  Input,
-  theme,
-  InputGroup,
-  InputLeftElement
+  theme
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import { FaSearch } from "react-icons/fa"
@@ -66,7 +63,6 @@ export const App = () => {
         </Box>  
 
         <Grid minH="10vh" p={3}>
-          {/* <ColorModeSwitcher justifySelf="flex-end" /> */}
           <VStack spacing={8}>
             <Text textAlign="left" fontSize="sm">
               Not sure how to dispose a waste item? Type it into the searchbar below to find out.

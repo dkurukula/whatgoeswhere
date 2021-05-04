@@ -9,7 +9,7 @@ import {
   Input,
   theme,
   InputGroup,
-  InputLeftElement,
+  InputLeftElement
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
 import { FaSearch } from "react-icons/fa"
@@ -20,7 +20,7 @@ import { SearchBar } from "./components/SearchBar"
 
 const initialState = {
   search:'',
-  searchedItems: []
+  searchedItems: items.sort((a, b) => (a.item > b.item) ? 1 : -1)
 }
 
 const reducer = (state: any, action: { type: any; payload: any }) => {
@@ -66,7 +66,7 @@ export const App = () => {
         </Box>  
 
         <Grid minH="10vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
+          {/* <ColorModeSwitcher justifySelf="flex-end" /> */}
           <VStack spacing={8}>
             <Text textAlign="left" fontSize="sm">
               Not sure how to dispose a waste item? Type it into the searchbar below to find out.
@@ -76,6 +76,13 @@ export const App = () => {
           </VStack>
         </Grid>
       </Box>
+
+      <Box>
+        <Text textAlign="center" margin={8} color="purple">
+          Have a question or concern? Email us at GreenTeam@unityhealth.to
+        </Text>
+      </Box>
+
     </ChakraProvider>
   )
 }

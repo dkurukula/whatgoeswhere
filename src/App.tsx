@@ -8,14 +8,11 @@ import {
   Heading,
   theme
 } from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { FaSearch } from "react-icons/fa"
 import ListView from './components/ListView'
 import items from './data.json'
 import React from "react"
 import { SearchBar } from "./components/SearchBar"
-import { Flex, Spacer } from "@chakra-ui/react"
-import { Stack, HStack, StackDivider } from "@chakra-ui/react"
+import { StackDivider } from "@chakra-ui/react"
 
 const initialState = {
   search:'',
@@ -70,7 +67,7 @@ export const App = () => {
             spacing={8}
             align="stretch"
           >
-            <Flex>
+            <VStack>
               <Box>
                 <Text textAlign="left" fontSize="sm">
                   Not sure how to dispose a waste item? Type it into the searchbar below to find out.
@@ -80,7 +77,7 @@ export const App = () => {
               <Box w="300px">  
                 <SearchBar onInput={e => handleSearch(e)} />
               </Box>
-            </Flex>
+            </VStack>
             <ListView items={state.searchedItems} />          
           </VStack>
         </Grid>

@@ -14,6 +14,8 @@ import ListView from './components/ListView'
 import items from './data.json'
 import React from "react"
 import { SearchBar } from "./components/SearchBar"
+import { Flex, Spacer } from "@chakra-ui/react"
+import { Stack, HStack, StackDivider } from "@chakra-ui/react"
 
 const initialState = {
   search:'',
@@ -51,7 +53,7 @@ export const App = () => {
     <ChakraProvider theme={theme}>
       <Grid templateColumns="repeat(5, 1fr)" bg="gray.100">
         <Box m={4} fontSize="lg">What Goes Where</Box>
-        <Box m={5} fontSize="sm" textAlign="left">St. Joseph's Hospital</Box>
+        <Box m={5} fontSize="sm" textAlign="left">St. Joseph's Health Centre</Box>
         <Box m={5} fontSize="sm" textAlign="left">St. Michael's Hospital</Box>
         <Box m={5} fontSize="sm" textAlign="left">Providence Healthcare</Box>
         <Box m={5} fontSize="sm" textAlign="left">Li Ka Shing Knowledge Institute</Box>
@@ -63,12 +65,23 @@ export const App = () => {
         </Box>  
 
         <Grid minH="10vh" p={3}>
-          <VStack spacing={8}>
-            <Text textAlign="left" fontSize="sm">
-              Not sure how to dispose a waste item? Type it into the searchbar below to find out.
-            </Text>
-            <SearchBar onInput={e => handleSearch(e)} />
-            <ListView items={state.searchedItems} />
+          <VStack 
+            divider={<StackDivider borderColor="gray.200" />}
+            spacing={8}
+            align="stretch"
+          >
+            <Flex>
+              <Box>
+                <Text textAlign="left" fontSize="sm">
+                  Not sure how to dispose a waste item? Type it into the searchbar below to find out.
+                </Text>
+              </Box>
+              
+              <Box w="300px">  
+                <SearchBar onInput={e => handleSearch(e)} />
+              </Box>
+            </Flex>
+            <ListView items={state.searchedItems} />          
           </VStack>
         </Grid>
       </Box>

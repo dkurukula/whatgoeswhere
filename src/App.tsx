@@ -16,22 +16,22 @@ import { SearchBar } from "./components/SearchBar"
 import { StackDivider } from "@chakra-ui/react"
 
 interface ISite {
-  StMichaels: string,
-  StJosephs: string,
-  Providence: string,
+  SMH: string,
+  SJHC: string,
+  PHC: string,
   LKS: string
 }
 const site:ISite  = {
-  StMichaels:"St. Michael's Hospital",
-  StJosephs:"St. Joseph's Health Centre",
-  Providence:"Providence Healthcare",
+  SMH:"St. Michael's Hospital",
+  SJHC:"St. Joseph's Health Centre",
+  PHC:"Providence Healthcare",
   LKS:"Li Ka Shing Knowledge Institute"
 }
 
 const initialState = {
   search:'',
   searchedItems: items.sort((a, b) => (a.item > b.item) ? 1 : -1),
-  site: site.StMichaels
+  site: site.SMH
 }
 
 const reducer = (state: any, action: { type: any; payload: any }) => {
@@ -70,21 +70,21 @@ export const App = () => {
         <Box m={4} fontSize="lg">What Goes Where</Box>
         <Box m={5} fontSize="sm" textAlign="left">
           <Button 
-            onClick={()=>switchSites(site.StJosephs)}
+            onClick={()=>switchSites(site.SJHC)}
           >
             St. Joseph's Health Centre
             </Button>
           </Box>
         <Box m={5} fontSize="sm" textAlign="left">
           <Button
-            onClick={()=>switchSites(site.StMichaels)}
+            onClick={()=>switchSites(site.SMH)}
           >
           St. Michael's Hospital
           </Button>
         </Box>
         <Box m={5} fontSize="sm" textAlign="left">
           <Button
-            onClick={()=>switchSites(site.Providence)}
+            onClick={()=>switchSites(site.PHC)}
           >
           Providence Healthcare
           </Button>

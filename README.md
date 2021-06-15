@@ -1,6 +1,6 @@
 # Waste Wizard
 
-A web app for searching where to put waste at UHN
+A waste sorting web app for Unity Health Toronto 
 
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).

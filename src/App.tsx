@@ -82,28 +82,28 @@ export const App = () => {
           <Button 
             onClick={()=>switchSites(site.SJHC)}
           >
-            St. Joseph's Health Centre
+            {site.SJHC}
             </Button>
           </Box>
         <Box m={5} fontSize="sm" textAlign="left">
           <Button
             onClick={()=>switchSites(site.SMH)}
           >
-          St. Michael's Hospital
+            {site.SMH}
           </Button>
         </Box>
         <Box m={5} fontSize="sm" textAlign="left">
           <Button
             onClick={()=>switchSites(site.PHC)}
           >
-          Providence Healthcare
+            {site.PHC}
           </Button>
         </Box>
         <Box m={5} fontSize="sm" textAlign="left">
           <Button
             onClick={()=>switchSites(site.LKS)}
           >
-          Li Ka Shing Knowledge Institute
+            {site.LKS}
           </Button>
         </Box>
       </Grid>

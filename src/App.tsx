@@ -44,7 +44,7 @@ const initialState:IState = {
   site: site.SMH
 }
 
-const reducer = (state: any, action: { type: any; payload: any }) => {
+const reducer = (state: IState, action: { type: string; payload: any }) => {
   switch (action.type){
     case 'SEARCH_INPUT':
       return { ...state, search: action.payload}
@@ -61,10 +61,9 @@ export const App = () => {
 
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  const handleSearch = (e: { target: { value: string } }, state:IState) => {
-    let searchStr = e.target.value
+  const handleSearch = (searchStr: string, site: SiteStr) => {
     dispatch({ type: 'SEARCH_INPUT', payload: searchStr })
-    const searchData= items[state.site]
+    const searchData= items[site]
       .filter(
         it =>
           it.item.toLocaleLowerCase().includes(searchStr.toLocaleLowerCase())
@@ -72,7 +71,10 @@ export const App = () => {
     dispatch({ type: 'SEARCH_DATA', payload: searchData})
   }
 
-  const switchSites = (site: string) =>  dispatch({type: 'SWITCH_SITE', payload: site})
+  const switchSites = (site: SiteStr) =>  {
+    dispatch({type: 'SWITCH_SITE', payload: site})
+    handleSearch('', site)
+  }
 
   return (
     <ChakraProvider theme={theme}>
@@ -127,7 +129,7 @@ export const App = () => {
               </Box>
               
               <Box w="300px">  
-                <SearchBar onInput={e => handleSearch(e, state)} />
+                <SearchBar onInput={(e:{target: {value:string}}) => handleSearch(e.target.value, state.site)} value={state.search}/>
               </Box>
             </VStack>
             <ListView items={state.searchedItems} />          

@@ -15,11 +15,13 @@ import React from "react"
 import { SearchBar } from "./components/SearchBar"
 import { StackDivider } from "@chakra-ui/react"
 
+type SiteStr = "St. Michael's Hospital" | "St. Joseph's Health Centre" | "Providence Healthcare" | "Li Ka Shing Knowledge Institute"
+
 interface ISite {
-  SMH: string,
-  SJHC: string,
-  PHC: string,
-  LKS: string
+  SMH: SiteStr,
+  SJHC: SiteStr,
+  PHC: SiteStr,
+  LKS: SiteStr 
 }
 const site:ISite  = {
   SMH:"St. Michael's Hospital",
@@ -28,9 +30,17 @@ const site:ISite  = {
   LKS:"Li Ka Shing Knowledge Institute"
 }
 
-const initialState = {
+type SiteData = {"item": string, "bin": string }[]
+
+interface IState {
+  search: string,
+  searchedItems: SiteData,
+  site: ISite[keyof ISite]
+}
+
+const initialState:IState = {
   search:'',
-  searchedItems: items.sort((a, b) => (a.item > b.item) ? 1 : -1),
+  searchedItems: items[site.SMH].sort((a, b) => (a.item > b.item) ? 1 : -1),
   site: site.SMH
 }
 
@@ -51,10 +61,10 @@ export const App = () => {
 
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  const handleSearch = (e: { target: { value: string } }) => {
+  const handleSearch = (e: { target: { value: string } }, state:IState) => {
     let searchStr = e.target.value
     dispatch({ type: 'SEARCH_INPUT', payload: searchStr })
-    const searchData= items
+    const searchData= items[state.site]
       .filter(
         it =>
           it.item.toLocaleLowerCase().includes(searchStr.toLocaleLowerCase())
@@ -117,7 +127,7 @@ export const App = () => {
               </Box>
               
               <Box w="300px">  
-                <SearchBar onInput={e => handleSearch(e)} />
+                <SearchBar onInput={e => handleSearch(e, state)} />
               </Box>
             </VStack>
             <ListView items={state.searchedItems} />          

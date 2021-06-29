@@ -1,4 +1,4 @@
-import {useReducer, useState} from "react"
+import {ReactNode, useReducer} from "react"
 import {
   ChakraProvider,
   Box,
@@ -6,42 +6,73 @@ import {
   VStack,
   Grid,
   Heading,
-  theme
+  theme,
+  Flex,
+  IconButton,
+  useColorModeValue,
+  useDisclosure,
+  HStack,
+  Link,
+  Stack
 } from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { FaSearch } from "react-icons/fa"
 import ListView from './components/ListView'
 import items from './data.json'
 import React from "react"
 import { SearchBar } from "./components/SearchBar"
-import { Flex, Spacer } from "@chakra-ui/react"
-import { Stack, HStack, StackDivider } from "@chakra-ui/react"
+import { StackDivider } from "@chakra-ui/react"
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
-const initialState = {
-  search:'',
-  searchedItems: items.sort((a, b) => (a.item > b.item) ? 1 : -1)
+
+type SiteStr = "St. Michael's Hospital" | "St. Joseph's Health Centre" | "Providence Healthcare" | "Li Ka Shing Knowledge Institute"
+const Links:SiteStr[] = ["St. Michael's Hospital" , "St. Joseph's Health Centre" , "Providence Healthcare" , "Li Ka Shing Knowledge Institute"]
+
+interface ISite {
+  SMH: SiteStr,
+  SJHC: SiteStr,
+  PHC: SiteStr,
+  LKS: SiteStr 
+}
+const site:ISite  = {
+  SMH:"St. Michael's Hospital",
+  SJHC:"St. Joseph's Health Centre",
+  PHC:"Providence Healthcare",
+  LKS:"Li Ka Shing Knowledge Institute"
 }
 
-const reducer = (state: any, action: { type: any; payload: any }) => {
+type SiteData = {"item": string, "bin": string }[]
+
+interface IState {
+  search: string,
+  searchedItems: SiteData,
+  site: ISite[keyof ISite]
+}
+
+const initialState:IState = {
+  search:'',
+  searchedItems: items[site.SMH].sort((a, b) => (a.item > b.item) ? 1 : -1),
+  site: site.SMH
+}
+
+const reducer = (state: IState, action: { type: string; payload: any }) => {
   switch (action.type){
     case 'SEARCH_INPUT':
       return { ...state, search: action.payload}
     case 'SEARCH_DATA':
       return { ...state, searchedItems: action.payload}
+    case 'SWITCH_SITE':
+      return { ...state, site: action.payload}
     default:
       throw new Error()
   }
 }
 
-
 export const App = () => {
 
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  const handleSearch = (e: { target: { value: string } }) => {
-    let searchStr = e.target.value
+  const handleSearch = (searchStr: string, site: SiteStr) => {
     dispatch({ type: 'SEARCH_INPUT', payload: searchStr })
-    const searchData= items
+    const searchData= items[site]
       .filter(
         it =>
           it.item.toLocaleLowerCase().includes(searchStr.toLocaleLowerCase())
@@ -49,39 +80,90 @@ export const App = () => {
     dispatch({ type: 'SEARCH_DATA', payload: searchData})
   }
 
+  const switchSites = (site: SiteStr) =>  {
+    dispatch({type: 'SWITCH_SITE', payload: site})
+    handleSearch('', site)
+  }
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const NavLink = ({ children }: { children: ReactNode }) => (
+    <Link
+      px={2}
+      py={1}
+      rounded={'md'}
+      _hover={{
+        textDecoration: 'none',
+        bg: useColorModeValue('gray.200', 'gray.700'),
+      }}
+      href={'#'}
+      onClick={()=>switchSites(children.toString() as SiteStr)}
+      >
+      {children}
+    </Link>
+  );
+
   return (
     <ChakraProvider theme={theme}>
-      <Grid templateColumns="repeat(5, 1fr)" bg="gray.100">
-        <Box m={4} fontSize="lg">What Goes Where</Box>
-        <Box m={5} fontSize="sm" textAlign="left">St. Joseph's Health Centre</Box>
-        <Box m={5} fontSize="sm" textAlign="left">St. Michael's Hospital</Box>
-        <Box m={5} fontSize="sm" textAlign="left">Providence Healthcare</Box>
-        <Box m={5} fontSize="sm" textAlign="left">Li Ka Shing Knowledge Institute</Box>
-      </Grid>
-      
+      {/* <Grid templateColumns="repeat(5, 1fr)" bg="gray.100"> */}
+        <Box bg={useColorModeValue('gray.100', 'gray.900')} px={6}>
+          <Flex h={24} alignItems={'center'} justifyContent={'space-between'}>
+            <IconButton
+              size={'lg'}
+              icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+              aria-label={'Open Menu'}
+              display={{ md: 'none' }}
+              onClick={isOpen ? onClose : onOpen}
+            />
+              <Box m={6} fontWeight="semibold" fontSize="lg">What Goes Where</Box>
+            <HStack spacing={8} alignItems={'center'}>
+              <HStack
+                as={'nav'}
+                spacing={8}
+                display={{ base: 'none', md: 'flex' }}>
+                {Links.map((link) => (
+                  <NavLink key={link}>{link}</NavLink>
+                ))}
+              </HStack>
+            </HStack>
+          </Flex>
+          {isOpen ? (
+            <Box pb={4} display={{ md: 'none' }}>
+              <Stack as={'nav'} spacing={4}>
+                {Links.map((link) => (
+                  <NavLink key={link}>{link}</NavLink>
+                ))}
+              </Stack>
+            </Box>
+          ) : null}
+
+
+        </Box>
+      {/* </Grid> */}
+
       <Box textAlign="left" fontSize="xl">
         <Box textAlign="left" marginLeft={8} marginTop={5} fontSize="xl" color="purple">
-          <Heading>St. Michael's Hospital</Heading>
-        </Box>  
+          <Heading>{state.site}</Heading>
+        </Box>
 
         <Grid minH="10vh" p={3}>
-          <VStack 
+          <VStack
             divider={<StackDivider borderColor="gray.200" />}
             spacing={8}
             align="stretch"
           >
-            <Flex>
-              <Box>
-                <Text textAlign="left" fontSize="sm">
+            <VStack>
+              <Box textAlign="left" marginLeft={8} fontSize="sm">
+                <Text >
                   Not sure how to dispose a waste item? Type it into the searchbar below to find out.
                 </Text>
               </Box>
-              
-              <Box w="300px">  
-                <SearchBar onInput={e => handleSearch(e)} />
+
+              <Box w="300px">
+                <SearchBar onInput={(e: { target: { value: string } }) => handleSearch(e.target.value, state.site)} value={state.search} />
               </Box>
-            </Flex>
-            <ListView items={state.searchedItems} />          
+            </VStack>
+            <ListView items={state.searchedItems} />
           </VStack>
         </Grid>
       </Box>

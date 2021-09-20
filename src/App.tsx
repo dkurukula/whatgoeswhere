@@ -91,7 +91,7 @@ export const App = () => {
       px={2}
       py={1}
       rounded={'md'}
-      boxShadow="outline"
+      boxShadow="xl"
       bg="white"
       _hover={{
         textDecoration: 'none',
@@ -116,7 +116,7 @@ export const App = () => {
               display={{ md: 'none' }}
               onClick={isOpen ? onClose : onOpen}
             />
-              <Box m={6} fontWeight="semibold" fontSize="lg">What Goes Where</Box>
+              <Box m={6} fontWeight="semibold" fontSize="2xl">What Goes Where</Box>
             <HStack spacing={8} alignItems={'center'}>
               <HStack
                 as={'nav'}

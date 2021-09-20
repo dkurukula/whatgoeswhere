@@ -1,7 +1,7 @@
 {
   "Li Ka Shing Knowledge Institute": [
     {
-      "item": "Plastic bag",
+      "item": "Plastic bags",
       "bin": "Garbage"
     },
     {
@@ -294,7 +294,7 @@
     },
     {
       "item": "Toner cartridges",
-      "bin": "Drop off your cartridges in the 2 Shuter bin"
+      "bin": "Drop off at the PGT Receiving dock"
     },
     {
       "item": "Lost and found",
@@ -302,12 +302,12 @@
     },
     {
       "item": "Light bulbs to be changed, replaced, or disposed of",
-      "bin": "Contact Engineering"
+      "bin": "Submit an Engineering Request (located on the SMH Intranet under Quick Links)"
     }
   ],
   "St. Michael's Hospital": [
     {
-      "item": "Plastic bag",
+      "item": "Plastic bags",
       "bin": "Garbage"
     },
     {
@@ -604,11 +604,11 @@
     },
     {
       "item": "Light bulbs to be changed, replaced, or disposed of",
-      "bin": "Contact Engineering"
+      "bin": "Submit an Engineering Request (located on the SMH Intranet under Quick Links)"
     },
     {
       "item": "Toner cartridges",
-      "bin": "Drop off in the 2 Shuter bin"
+      "bin": "Drop off at the PGT Receiving dock"
     },
     {
       "item": "Lost and found",
@@ -617,7 +617,7 @@
   ],
   "St. Joseph's Health Centre": [
     {
-      "item": "Plastic bag",
+      "item": "Plastic bags",
       "bin": "Garbage"
     },
     {
@@ -927,7 +927,7 @@
   ],
   "Providence Healthcare": [
     {
-      "item": "Plastic bag",
+      "item": "Plastic bags",
       "bin": "Garbage"
     },
     {

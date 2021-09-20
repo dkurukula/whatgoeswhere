@@ -19,7 +19,6 @@ import ListView from './components/ListView'
 import items from './data.json'
 import React from "react"
 import { SearchBar } from "./components/SearchBar"
-import { StackDivider } from "@chakra-ui/react"
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
 
@@ -92,6 +91,8 @@ export const App = () => {
       px={2}
       py={1}
       rounded={'md'}
+      boxShadow="xl"
+      bg="white"
       _hover={{
         textDecoration: 'none',
         bg: useColorModeValue('gray.200', 'gray.700'),
@@ -115,7 +116,7 @@ export const App = () => {
               display={{ md: 'none' }}
               onClick={isOpen ? onClose : onOpen}
             />
-              <Box m={6} fontWeight="semibold" fontSize="lg">What Goes Where</Box>
+              <Box m={6} fontWeight="semibold" fontSize="2xl">What Goes Where</Box>
             <HStack spacing={8} alignItems={'center'}>
               <HStack
                 as={'nav'}
@@ -142,18 +143,17 @@ export const App = () => {
       {/* </Grid> */}
 
       <Box textAlign="left" fontSize="xl">
-        <Box textAlign="left" marginLeft={8} marginTop={5} fontSize="xl" color="purple">
-          <Heading>{state.site}</Heading>
-        </Box>
 
         <Grid minH="10vh" p={3}>
           <VStack
-            divider={<StackDivider borderColor="gray.200" />}
             spacing={8}
             align="stretch"
           >
+        <Box textAlign="left" marginLeft={8} marginTop={5} fontSize="xl" color="purple">
+          <Heading color="darkgreen">{state.site}</Heading>
+        </Box>
             <VStack>
-              <Box textAlign="left" marginLeft={8} fontSize="sm">
+              <Box textAlign="left" marginLeft={8} fontSize="m">
                 <Text >
                   Not sure how to dispose a waste item? Type it into the searchbar below to find out.
                 </Text>

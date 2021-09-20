@@ -9,7 +9,7 @@ interface IListViewProps {
 const ListView: FunctionComponent<IListViewProps> = ({items}) => {
     console.log(items)
     return (
-        <Table variant="striped" colorScheme="gray">
+        <Table variant="striped" colorScheme="green">
             <TableCaption></TableCaption>
             <Thead>
                 <Tr>

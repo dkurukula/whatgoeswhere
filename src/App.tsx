@@ -19,7 +19,6 @@ import ListView from './components/ListView'
 import items from './data.json'
 import React from "react"
 import { SearchBar } from "./components/SearchBar"
-import { StackDivider } from "@chakra-ui/react"
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
 

@@ -92,6 +92,8 @@ export const App = () => {
       px={2}
       py={1}
       rounded={'md'}
+      boxShadow="outline"
+      bg="white"
       _hover={{
         textDecoration: 'none',
         bg: useColorModeValue('gray.200', 'gray.700'),
@@ -142,18 +144,17 @@ export const App = () => {
       {/* </Grid> */}
 
       <Box textAlign="left" fontSize="xl">
-        <Box textAlign="left" marginLeft={8} marginTop={5} fontSize="xl" color="purple">
-          <Heading>{state.site}</Heading>
-        </Box>
 
         <Grid minH="10vh" p={3}>
           <VStack
-            divider={<StackDivider borderColor="gray.200" />}
             spacing={8}
             align="stretch"
           >
+        <Box textAlign="left" marginLeft={8} marginTop={5} fontSize="xl" color="purple">
+          <Heading color="darkgreen">{state.site}</Heading>
+        </Box>
             <VStack>
-              <Box textAlign="left" marginLeft={8} fontSize="sm">
+              <Box textAlign="left" marginLeft={8} fontSize="m">
                 <Text >
                   Not sure how to dispose a waste item? Type it into the searchbar below to find out.
                 </Text>

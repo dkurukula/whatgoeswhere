@@ -71,12 +71,12 @@ export const App = () => {
 
   const handleSearch = (searchStr: string, site: SiteStr) => {
     dispatch({ type: 'SEARCH_INPUT', payload: searchStr })
-    const searchData= items[site]
+    const searchData = items[site]
       .filter(
         it =>
           it.item.toLocaleLowerCase().includes(searchStr.toLocaleLowerCase())
-      )
-    dispatch({ type: 'SEARCH_DATA', payload: searchData})
+      ).sort((a, b) => (a.item > b.item) ? 1 : -1)
+    dispatch({ type: 'SEARCH_DATA', payload: searchData })
   }
 
   const switchSites = (site: SiteStr) =>  {

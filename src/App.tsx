@@ -149,9 +149,12 @@ export const App = () => {
             spacing={8}
             align="stretch"
           >
-        <Box textAlign="left" marginLeft={8} marginTop={5} fontSize="xl" color="purple">
-          <Heading color="darkgreen">{state.site}</Heading>
-        </Box>
+            <Box textAlign="left" marginRight={8} marginLeft={8} marginTop={5} fontSize="xl" color="purple">
+              <HStack justify="space-between">
+                <Heading color="darkgreen">{state.site}</Heading>
+                <Link href={`/${state.site}.png`} isExternal>View Poster</Link>
+              </HStack>
+            </Box>
             <VStack>
               <Box textAlign="left" marginLeft={8} fontSize="m">
                 <Text >

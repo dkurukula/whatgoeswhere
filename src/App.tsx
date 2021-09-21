@@ -19,7 +19,7 @@ import ListView from './components/ListView'
 import items from './data.json'
 import React from "react"
 import { SearchBar } from "./components/SearchBar"
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { ExternalLinkIcon, HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
 
 type SiteStr = "St. Michael's Hospital" | "St. Joseph's Health Centre" | "Providence Healthcare" | "Li Ka Shing Knowledge Institute"
@@ -71,12 +71,12 @@ export const App = () => {
 
   const handleSearch = (searchStr: string, site: SiteStr) => {
     dispatch({ type: 'SEARCH_INPUT', payload: searchStr })
-    const searchData= items[site]
+    const searchData = items[site]
       .filter(
         it =>
           it.item.toLocaleLowerCase().includes(searchStr.toLocaleLowerCase())
-      )
-    dispatch({ type: 'SEARCH_DATA', payload: searchData})
+      ).sort((a, b) => (a.item > b.item) ? 1 : -1)
+    dispatch({ type: 'SEARCH_DATA', payload: searchData })
   }
 
   const switchSites = (site: SiteStr) =>  {
@@ -149,9 +149,12 @@ export const App = () => {
             spacing={8}
             align="stretch"
           >
-        <Box textAlign="left" marginLeft={8} marginTop={5} fontSize="xl" color="purple">
-          <Heading color="darkgreen">{state.site}</Heading>
-        </Box>
+            <Box textAlign="left" marginRight={8} marginLeft={8} marginTop={5} fontSize="xl" color="purple">
+              <HStack justify="space-between">
+                <Heading color="darkgreen">{state.site}</Heading>
+                <Link href={`/posters/${state.site}.png`} isExternal>View Poster <ExternalLinkIcon mx="2px"/></Link>
+              </HStack>
+            </Box>
             <VStack>
               <Box textAlign="left" marginLeft={8} fontSize="m">
                 <Text >

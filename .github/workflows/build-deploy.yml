@@ -21,7 +21,7 @@ jobs:
       uses: borales/actions-yarn@v2.3.0
     
     - name: Install packages
-      run: yarn install --frozen-lockfile
+      run: yarn add -W caniuse-lite && yarn install --frozen-lockfile
     
     - name: Build project
       run: yarn build

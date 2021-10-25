@@ -10,7 +10,7 @@
         },
         {
             "item": "Electronics, small appliances",
-            "bin": "Drop off at Receiving, Bernicke Wing, 1st floor"
+            "bin": "Drop off at Receiving, Barnicke Wing, 1st floor"
         },
         {
             "item": "Extension cords",
@@ -294,19 +294,19 @@
         },
         {
             "item": "Wooden stir sticks",
-            "bin": "Blue bin"
+            "bin": "Garbage"
         },
         {
-            "item": "Light bulb to be changed, replaced, or disposed of",
-            "bin": "Contact Engineering"
-        },
+            "item": "Clear plant-based utensils",
+            "bin": "Garbage"
+        },    
         {
             "item": "Toner cartridges",
             "bin": "Drop off at Stores"
         },
         {
             "item": "Batteries",
-            "bin": "Drop off at Receiving, Bernicke Wing, 1st floor"
+            "bin": "Drop off at Receiving, Barnicke Wing, 1st floor"
         }
     ]
 }

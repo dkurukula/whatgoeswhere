@@ -270,7 +270,7 @@
         },
         {
             "item": "Wooden stir sticks",
-            "bin": "Blue bin"
+            "bin": "Garbage"
         },
         {
             "item": "Condiment packets",
@@ -290,7 +290,7 @@
         },
         {
             "item": "Batteries",
-            "bin": "Email batteryrecycling@smh.ca or contact an EVS Ops Leader to have your batteries picked up"
+            "bin": "Call ext. 5023 to submit a request for pickup"
         },
         {
             "item": "Toner cartridges",
@@ -299,10 +299,6 @@
         {
             "item": "Lost and found",
             "bin": "Contact Security at 416-864-5323"
-        },
-        {
-            "item": "Light bulbs to be changed, replaced, or disposed of",
-            "bin": "Submit an Engineering Request (located on the SMH Intranet under Quick Links)"
         }
     ]
 }

@@ -22,6 +22,7 @@
     "typescript": "^3.9.5",
     "web-vitals": "^0.2.2"
   },
+  "homepage":"https://uhtgreenteam.github.io/whatgoeswhere/",
   "scripts": {
     "start": "react-scripts start",
     "create/data": "node ./combine-data.js",

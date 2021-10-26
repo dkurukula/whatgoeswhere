@@ -21,6 +21,7 @@ import React from "react"
 import { SearchBar } from "./components/SearchBar"
 import { ExternalLinkIcon, HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
+const HOMEPAGEDIR='/whatgoeswhere'
 
 type SiteStr = "St. Michael's Hospital" | "St. Joseph's Health Centre" | "Providence Healthcare" | "Li Ka Shing Knowledge Institute"
 const Links:SiteStr[] = ["St. Michael's Hospital" , "St. Joseph's Health Centre" , "Providence Healthcare" , "Li Ka Shing Knowledge Institute"]
@@ -152,7 +153,7 @@ export const App = () => {
             <Box textAlign="left" marginRight={8} marginLeft={8} marginTop={5} fontSize="xl" color="purple">
               <HStack justify="space-between">
                 <Heading color="darkgreen">{state.site}</Heading>
-                <Link href={`/posters/${state.site}.png`} isExternal>View Poster <ExternalLinkIcon mx="2px"/></Link>
+                <Link href={`${HOMEPAGEDIR}/posters/${state.site}.png`} isExternal>View Poster <ExternalLinkIcon mx="2px"/></Link>
               </HStack>
             </Box>
             <VStack>

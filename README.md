@@ -1,7 +1,6 @@
-# Waste Wizard
+# What Goes Where
 
 A waste sorting web app for Unity Health Toronto 
-
 
 ## Project Specific Scripts
 

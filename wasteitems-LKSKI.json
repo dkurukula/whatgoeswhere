@@ -10,7 +10,7 @@
         },
         {
             "item": "Electronics, small appliances",
-            "bin": "Email batteryrecycling@smh.ca to have your item picked up"
+            "bin": "Contact IT at ext. 5751 for pickup"
         },
         {
             "item": "Extension cords",
@@ -66,15 +66,15 @@
         },
         {
             "item": "BPI, or equivalent, certified compostable cutlery/utensils",
-            "bin": "Organics"
+            "bin": "Garbage"
         },
         {
             "item": "BPI, or equivalent, certified compostable paper plates",
-            "bin": "Organics"
+            "bin": "Garbage"
         },
         {
             "item": "BPI, or equivalent, certified compostable cups",
-            "bin": "Organics"
+            "bin": "Garbage"
         },
         {
             "item": "Coffee grounds and filters",
@@ -149,7 +149,7 @@
             "bin": "Blue bin"
         },
         {
-            "item": "Coated paper cups and drink cups (e.g. Tim Hortons, Starbucks)",
+            "item": "Coated paper cups and drink cups (e.g. Tim Hortons, Second Cup, Starbucks)",
             "bin": "Garbage"
         },
         {
@@ -222,7 +222,7 @@
         },
         {
             "item": "Scrap metal",
-            "bin": "Blue bin"
+            "bin": "Contact EVS for pickup"
         },
         {
             "item": "Plastic straws",

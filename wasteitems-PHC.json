@@ -10,7 +10,7 @@
         },
         {
             "item": "Electronics, small appliances",
-            "bin": "Drop off at the K-wing shop"
+            "bin": "Contact IT at ext. 3000 for pickup"
         },
         {
             "item": "Extension cords",
@@ -137,7 +137,7 @@
             "bin": "Blue bin"
         },
         {
-            "item": "Coated paper cups and drink cups (e.g. Tim Hortons, Starbucks)",
+            "item": "Coated paper cups and drink cups (e.g. Tim Hortons, Second Cup, Starbucks)",
             "bin": "Garbage"
         },
         {
@@ -210,7 +210,7 @@
         },
         {
             "item": "Scrap metal",
-            "bin": "Blue bin"
+            "bin": "Contact EVS for pickup"
         },
         {
             "item": "Plastic straws",
@@ -290,7 +290,7 @@
         },
         {
             "item": "Seasons Café compostable lids",
-            "bin": "Organics"
+            "bin": "Garbage"
         },
         {
             "item": "Wooden stir sticks",

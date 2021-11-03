@@ -197,7 +197,7 @@
             "bin": "Blue bin"
         },
         {
-            "item": "Plastic cutlery (hard brittle plastic)",
+            "item": "Plastic cutlery/utensils (hard brittle plastic)",
             "bin": "Garbage"
         },
         {
@@ -276,20 +276,21 @@
             "item": "Muffin and cupcake wrappers",
             "bin": "Organics"
         },
+        
         {
-            "item": "BPI, or equivalent, certified compostable utensils/cutlery (in Lakeside Café)",
+            "item": "Lakeside Café utensils/cutlery",
+            "bin": "Garbage"
+        },
+        {
+            "item": "Lakeside Café containers",
             "bin": "Organics"
         },
         {
-            "item": "BPI, or equivalent, certified compostable paper containers (in Lakeside café)",
+            "item": "Lakeside Café paper cups",
             "bin": "Organics"
         },
         {
-            "item": "BPI, or equivalent, certified compostable paper cups (in Lakeside café)",
-            "bin": "Organics"
-        },
-        {
-            "item": "BPI, or equivalent, certified compostable lids (in Lakeside Café)",
+            "item": "Lakeside Café compostable lids",
             "bin": "Organics"
         },
         {

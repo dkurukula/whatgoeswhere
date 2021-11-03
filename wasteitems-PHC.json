@@ -197,7 +197,7 @@
             "bin": "Blue bin"
         },
         {
-            "item": "Plastic cutlery (hard brittle plastic)",
+            "item": "Plastic cutlery/utensils (hard brittle plastic)",
             "bin": "Garbage"
         },
         {
@@ -277,19 +277,19 @@
             "bin": "Organics"
         },
         {
-            "item": "BPI, or equivalent, certified compostable utensils/cutlery (in Lakeside Café)",
+            "item": "Seasons Café utensils/cutlery",
+            "bin": "Garbage"
+        },
+        {
+            "item": "Seasons Café containers (paper)",
             "bin": "Organics"
         },
         {
-            "item": "BPI, or equivalent, certified compostable paper containers (in Lakeside café)",
+            "item": "Seasons Café paper cups",
             "bin": "Organics"
         },
         {
-            "item": "BPI, or equivalent, certified compostable paper cups (in Lakeside café)",
-            "bin": "Organics"
-        },
-        {
-            "item": "BPI, or equivalent, certified compostable lids (in Lakeside Café)",
+            "item": "Seasons Café compostable lids",
             "bin": "Organics"
         },
         {

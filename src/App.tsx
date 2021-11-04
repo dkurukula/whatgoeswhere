@@ -153,7 +153,7 @@ export const App = () => {
             <Box textAlign="left" marginRight={8} marginLeft={8} marginTop={5} fontSize="xl" color="purple">
               <HStack justify="space-between">
                 <Heading color="darkgreen">{state.site}</Heading>
-                <Link href={`${HOMEPAGEDIR}/posters/${state.site}.png`} isExternal>View Poster <ExternalLinkIcon mx="2px"/></Link>
+                <Link href={`${HOMEPAGEDIR}/posters/${state.site}.pdf`} isExternal>View Poster <ExternalLinkIcon mx="2px"/></Link>
               </HStack>
             </Box>
             <VStack>

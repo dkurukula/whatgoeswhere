@@ -1,4 +1,4 @@
-import {ReactNode, useReducer} from "react"
+import {useReducer, useState} from "react"
 import {
   ChakraProvider,
   Box,
@@ -6,15 +6,13 @@ import {
   VStack,
   Grid,
   Heading,
+  Input,
   theme,
-  Flex,
-  IconButton,
-  useColorModeValue,
-  useDisclosure,
-  HStack,
-  Link,
-  Stack
+  InputGroup,
+  InputLeftElement,
 } from "@chakra-ui/react"
+import { ColorModeSwitcher } from "./ColorModeSwitcher"
+import { FaSearch } from "react-icons/fa"
 import ListView from './components/ListView'
 import items from './data.json'
 import React from "react"
@@ -49,61 +47,36 @@ interface IState {
 
 const initialState:IState = {
   search:'',
-  searchedItems: items[site.SMH].sort((a, b) => (a.item > b.item) ? 1 : -1),
-  site: site.SMH
+  searchedItems: []
 }
 
-const reducer = (state: IState, action: { type: string; payload: any }) => {
+const reducer = (state: any, action: { type: any; payload: any }) => {
   switch (action.type){
     case 'SEARCH_INPUT':
       return { ...state, search: action.payload}
     case 'SEARCH_DATA':
       return { ...state, searchedItems: action.payload}
-    case 'SWITCH_SITE':
-      return { ...state, site: action.payload}
     default:
       throw new Error()
   }
 }
 
+
 export const App = () => {
 
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  const handleSearch = (searchStr: string, site: SiteStr) => {
+  const handleSearch = (e: { target: { value: string } }) => {
+    let searchStr = e.target.value
     dispatch({ type: 'SEARCH_INPUT', payload: searchStr })
     const searchData = items[site]
+    const searchData= items
       .filter(
         it =>
           it.item.toLocaleLowerCase().includes(searchStr.toLocaleLowerCase())
       ).sort((a, b) => (a.item > b.item) ? 1 : -1)
     dispatch({ type: 'SEARCH_DATA', payload: searchData })
   }
-
-  const switchSites = (site: SiteStr) =>  {
-    dispatch({type: 'SWITCH_SITE', payload: site})
-    handleSearch('', site)
-  }
-
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const NavLink = ({ children }: { children: ReactNode }) => (
-    <Link
-      px={2}
-      py={1}
-      rounded={'md'}
-      boxShadow="xl"
-      bg="white"
-      _hover={{
-        textDecoration: 'none',
-        bg: useColorModeValue('gray.200', 'gray.700'),
-      }}
-      href={'#'}
-      onClick={()=>switchSites(children.toString() as SiteStr)}
-      >
-      {children}
-    </Link>
-  );
 
   return (
     <ChakraProvider theme={theme}>
@@ -167,17 +140,19 @@ export const App = () => {
                 <SearchBar onInput={(e: { target: { value: string } }) => handleSearch(e.target.value, state.site)} value={state.search} />
               </Box>
             </VStack>
+      <Box textAlign="center" fontSize="xl">
+        <Grid minH="100vh" p={3}>
+          <ColorModeSwitcher justifySelf="flex-end" />
+          <VStack spacing={8}>
+            <Heading>Waste Wizard</Heading>
+            <Text>
+              Search where to put your waste.
+            </Text>
+            <SearchBar onInput={e => handleSearch(e)} />
             <ListView items={state.searchedItems} />
           </VStack>
         </Grid>
       </Box>
-
-      <Box>
-        <Text textAlign="center" margin={8} color="purple">
-          Have a question or concern? Email us at GreenTeam@unityhealth.to
-        </Text>
-      </Box>
-
     </ChakraProvider>
   )
 }

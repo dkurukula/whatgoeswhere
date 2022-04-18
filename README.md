@@ -8,7 +8,7 @@ A waste sorting web app for Unity Health Toronto
 
 Create `data.json` from individual json files for each site  
 
-
+---
 
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).

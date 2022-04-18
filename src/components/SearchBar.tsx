@@ -3,8 +3,7 @@ import * as React from 'react';
 import { FaSearch } from 'react-icons/fa';
 
 export interface ISearchBarProps {
-    onInput: any, 
-    value: string
+    onInput: string
 }
 
 export function SearchBar(props: ISearchBarProps) {
@@ -15,7 +14,6 @@ export function SearchBar(props: ISearchBarProps) {
             <Input
                 placeholder="Search"
                 onInput={props.onInput}
-                value={props.value}
             />
         </InputGroup>
     );

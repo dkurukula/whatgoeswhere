@@ -10,7 +10,7 @@
     },
     {
       "item": "Electronics, small appliances",
-      "bin": "Email batteryrecycling@smh.ca to have your item picked up"
+      "bin": "Contact IT at ext. 5751 for pickup"
     },
     {
       "item": "Extension cords",
@@ -66,15 +66,15 @@
     },
     {
       "item": "BPI, or equivalent, certified compostable cutlery/utensils",
-      "bin": "Organics"
+      "bin": "Garbage"
     },
     {
       "item": "BPI, or equivalent, certified compostable paper plates",
-      "bin": "Organics"
+      "bin": "Garbage"
     },
     {
       "item": "BPI, or equivalent, certified compostable cups",
-      "bin": "Organics"
+      "bin": "Garbage"
     },
     {
       "item": "Coffee grounds and filters",
@@ -149,7 +149,7 @@
       "bin": "Blue bin"
     },
     {
-      "item": "Coated paper cups and drink cups (e.g. Tim Hortons, Starbucks)",
+      "item": "Coated paper cups and drink cups (e.g. Tim Hortons, Second Cup, Starbucks)",
       "bin": "Garbage"
     },
     {
@@ -222,7 +222,7 @@
     },
     {
       "item": "Scrap metal",
-      "bin": "Blue bin"
+      "bin": "Contact EVS for pickup"
     },
     {
       "item": "Plastic straws",
@@ -270,7 +270,7 @@
     },
     {
       "item": "Wooden stir sticks",
-      "bin": "Blue bin"
+      "bin": "Garbage"
     },
     {
       "item": "Condiment packets",
@@ -290,7 +290,7 @@
     },
     {
       "item": "Batteries",
-      "bin": "Email batteryrecycling@smh.ca or contact an EVS Ops Leader to have your batteries picked up"
+      "bin": "Call ext. 5023 to submit a request for pickup"
     },
     {
       "item": "Toner cartridges",
@@ -299,10 +299,6 @@
     {
       "item": "Lost and found",
       "bin": "Contact Security at 416-864-5323"
-    },
-    {
-      "item": "Light bulbs to be changed, replaced, or disposed of",
-      "bin": "Submit an Engineering Request (located on the SMH Intranet under Quick Links)"
     }
   ],
   "St. Michael's Hospital": [
@@ -316,11 +312,11 @@
     },
     {
       "item": "Electronics, small appliances",
-      "bin": "Email batteryrecycling@smh.ca to have them picked up"
+      "bin": "Contact IT at ext. 5751 to have them picked up"
     },
     {
       "item": "Batteries",
-      "bin": "Email batteryrecycling@smh.ca to have them picked up"
+      "bin": "Call ext. 5023 to submit a request for pickup"
     },
     {
       "item": "Extension cords",
@@ -375,20 +371,20 @@
       "bin": "Organics"
     },
     {
-      "item": "BPI, or equivalent, certified compostable wooden utensils",
+      "item": "Marketeria compostable cutlery/utensils",
+      "bin": "Garbage"
+    },
+    {
+      "item": "Marketeria containers",
       "bin": "Organics"
     },
     {
-      "item": "BPI, or equivalent, certified compostable paper containers (in the Marketeria)",
-      "bin": "Organics"
-    },
-    {
-      "item": "BPI, or equivalent, certified compostable cups",
-      "bin": "Organics"
+      "item": "Marketeria compostable cups",
+      "bin": "Garbage"
     },
     {
       "item": "Other BPI, or equivalent, certified compostable products",
-      "bin": "Organics"
+      "bin": "Garbage"
     },
     {
       "item": "Coffee grounds and filters",
@@ -463,7 +459,7 @@
       "bin": "Blue bin"
     },
     {
-      "item": "Coated paper cups and drink cups (e.g. Tim Hortons, Starbucks)",
+      "item": "Coated paper cups and drink cups (e.g. Tim Hortons, Second Cup, Starbucks)",
       "bin": "Garbage"
     },
     {
@@ -523,7 +519,7 @@
       "bin": "Blue bin"
     },
     {
-      "item": "Plastic cutlery (hard brittle plastic)",
+      "item": "Plastic cutlery/utensils (hard brittle plastic)",
       "bin": "Garbage"
     },
     {
@@ -536,7 +532,7 @@
     },
     {
       "item": "Scrap metal",
-      "bin": "Blue bin"
+      "bin": "Contact EVS for pickup"
     },
     {
       "item": "Plastic straws",
@@ -584,7 +580,7 @@
     },
     {
       "item": "Wooden stir sticks",
-      "bin": "Blue bin"
+      "bin": "Garbage"
     },
     {
       "item": "Condiment packets",
@@ -607,10 +603,6 @@
       "bin": "Organics"
     },
     {
-      "item": "Light bulbs to be changed, replaced, or disposed of",
-      "bin": "Submit an Engineering Request (located on the SMH Intranet under Quick Links)"
-    },
-    {
       "item": "Toner cartridges",
       "bin": "Drop off at the PGT Receiving dock"
     },
@@ -630,7 +622,7 @@
     },
     {
       "item": "Electronics, small appliances",
-      "bin": "Drop off at Receiving, Bernicke Wing, 1st floor"
+      "bin": "Contact IT at ext. 3805 for pickup"
     },
     {
       "item": "Extension cords",
@@ -757,7 +749,7 @@
       "bin": "Blue bin"
     },
     {
-      "item": "Coated paper cups and drink cups (e.g. Tim Hortons, Starbucks)",
+      "item": "Coated paper cups and drink cups (e.g. Tim Hortons, Second Cup, Starbucks)",
       "bin": "Garbage"
     },
     {
@@ -817,7 +809,7 @@
       "bin": "Blue bin"
     },
     {
-      "item": "Plastic cutlery (hard brittle plastic)",
+      "item": "Plastic cutlery/utensils (hard brittle plastic)",
       "bin": "Garbage"
     },
     {
@@ -830,7 +822,7 @@
     },
     {
       "item": "Scrap metal",
-      "bin": "Blue bin"
+      "bin": "Contact EVS for pickup"
     },
     {
       "item": "Plastic straws",
@@ -897,28 +889,28 @@
       "bin": "Organics"
     },
     {
-      "item": "BPI, or equivalent, certified compostable utensils/cutlery (in Lakeside Café)",
+      "item": "Lakeside Café utensils/cutlery",
+      "bin": "Garbage"
+    },
+    {
+      "item": "Lakeside Café containers",
       "bin": "Organics"
     },
     {
-      "item": "BPI, or equivalent, certified compostable paper containers (in Lakeside café)",
+      "item": "Lakeside Café paper cups",
       "bin": "Organics"
     },
     {
-      "item": "BPI, or equivalent, certified compostable paper cups (in Lakeside café)",
-      "bin": "Organics"
-    },
-    {
-      "item": "BPI, or equivalent, certified compostable lids (in Lakeside Café)",
-      "bin": "Organics"
+      "item": "Lakeside Café compostable lids",
+      "bin": "Garbage"
     },
     {
       "item": "Wooden stir sticks",
-      "bin": "Blue bin"
+      "bin": "Garbage"
     },
     {
-      "item": "Light bulb to be changed, replaced, or disposed of",
-      "bin": "Contact Engineering"
+      "item": "Clear plant-based utensils",
+      "bin": "Garbage"
     },
     {
       "item": "Toner cartridges",
@@ -926,7 +918,7 @@
     },
     {
       "item": "Batteries",
-      "bin": "Drop off at Receiving, Bernicke Wing, 1st floor"
+      "bin": "Drop off at Receiving, Barnicke Wing, 1st floor"
     }
   ],
   "Providence Healthcare": [
@@ -940,7 +932,7 @@
     },
     {
       "item": "Electronics, small appliances",
-      "bin": "Drop off at the K-wing shop"
+      "bin": "Contact IT at ext. 3000 for pickup"
     },
     {
       "item": "Extension cords",
@@ -1067,7 +1059,7 @@
       "bin": "Blue bin"
     },
     {
-      "item": "Coated paper cups and drink cups (e.g. Tim Hortons, Starbucks)",
+      "item": "Coated paper cups and drink cups (e.g. Tim Hortons, Second Cup, Starbucks)",
       "bin": "Garbage"
     },
     {
@@ -1127,7 +1119,7 @@
       "bin": "Blue bin"
     },
     {
-      "item": "Plastic cutlery (hard brittle plastic)",
+      "item": "Plastic cutlery/utensils (hard brittle plastic)",
       "bin": "Garbage"
     },
     {
@@ -1140,7 +1132,7 @@
     },
     {
       "item": "Scrap metal",
-      "bin": "Blue bin"
+      "bin": "Contact EVS for pickup"
     },
     {
       "item": "Plastic straws",
@@ -1207,28 +1199,24 @@
       "bin": "Organics"
     },
     {
-      "item": "BPI, or equivalent, certified compostable utensils/cutlery (in Lakeside Café)",
+      "item": "Seasons Café utensils/cutlery",
+      "bin": "Garbage"
+    },
+    {
+      "item": "Seasons Café containers (paper)",
       "bin": "Organics"
     },
     {
-      "item": "BPI, or equivalent, certified compostable paper containers (in Lakeside café)",
+      "item": "Seasons Café paper cups",
       "bin": "Organics"
     },
     {
-      "item": "BPI, or equivalent, certified compostable paper cups (in Lakeside café)",
-      "bin": "Organics"
-    },
-    {
-      "item": "BPI, or equivalent, certified compostable lids (in Lakeside Café)",
-      "bin": "Organics"
+      "item": "Seasons Café compostable lids",
+      "bin": "Garbage"
     },
     {
       "item": "Wooden stir sticks",
-      "bin": "Blue bin"
-    },
-    {
-      "item": "Light bulbs to be changed, replaced, or disposed of",
-      "bin": "Contact Engineering"
+      "bin": "Garbage"
     },
     {
       "item": "Batteries",

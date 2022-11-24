@@ -8,18 +8,12 @@ import {
   Thead,
   Tr
 } from "@chakra-ui/react";
-import React from "react";
 
 interface IListViewProps {
-  items: [{ item: string; bin: string }];
-  isVisible: boolean;
+  items: { item: string; bin: string }[] | [];
 }
 
-const ListView: FunctionComponent<IListViewProps> = ({ items, isVisible }) => {
-  console.log(items);
-  if (!isVisible) {
-    return <></>;
-  } else {
+const ListView: FunctionComponent<IListViewProps> = ({ items }) => {
     return (
       <Table variant="striped" colorScheme="green">
         <TableCaption></TableCaption>
@@ -40,6 +34,5 @@ const ListView: FunctionComponent<IListViewProps> = ({ items, isVisible }) => {
       </Table>
     );
   }
-};
 
 export default ListView;

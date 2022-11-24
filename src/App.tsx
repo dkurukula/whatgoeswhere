@@ -1,151 +1,122 @@
-import { ReactNode, useReducer, useState } from "react";
+import { useEffect } from "react";
+import { SiteContent } from "./SiteContent";
+import { Types, sites, RouteAll, validRoute } from "./utils";
+import { NavLink, switchSites } from "./Nav";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import { SearchBar } from "./components/SearchBar";
 import items from "./data.json";
 import ListView from "./components/ListView";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import {
   useColorModeValue,
   Box,
-  Text,
   ChakraProvider,
-  Link,
   Stack,
   useDisclosure,
-  VStack,
   HStack,
-  Heading,
   Flex,
   IconButton,
   theme,
-  Grid
 } from "@chakra-ui/react";
-import { CloseIcon, ExternalLinkIcon, HamburgerIcon } from "@chakra-ui/icons";
-
-const HOMEPAGEDIR = "/whatgoeswhere";
-
-type SiteStr =
-  | "St. Michael's Hospital"
-  | "St. Joseph's Health Centre"
-  | "Providence Healthcare"
-  | "Li Ka Shing Knowledge Institute";
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { useSites, useSitesDispatch } from "./SiteContext";
 
 const Links: SiteStr[] = [
   "St. Michael's Hospital",
   "St. Joseph's Health Centre",
   "Providence Healthcare",
-  "Li Ka Shing Knowledge Institute"
+  "Li Ka Shing Knowledge Institute",
 ];
 
-interface ISite {
-  SMH: SiteStr;
-  SJHC: SiteStr;
-  PHC: SiteStr;
-  LKS: SiteStr;
-}
-
-type IRouteAll = "SMH" | "SJHC" | "PHC" | "LKS" | "/";
-type IRoute = Exclude<IRouteAll, "/">;
 const RoutesArr: IRouteAll[] = ["SMH", "SJHC", "PHC", "LKS", "/"];
 
-const site: ISite = {
-  SMH: "St. Michael's Hospital",
-  SJHC: "St. Joseph's Health Centre",
-  PHC: "Providence Healthcare",
-  LKS: "Li Ka Shing Knowledge Institute"
-};
-
-const siteRev: Record<SiteStr, IRoute> = {
-  "St. Michael's Hospital": "SMH",
-  "St. Joseph's Health Centre": "SJHC",
-  "Providence Healthcare": "PHC",
-  "Li Ka Shing Knowledge Institute": "LKS"
-};
-
-type SiteData = { item: string; bin: string }[];
-
-interface IState {
-  search: string;
-  searchedItems: SiteData;
-  site: ISite[keyof ISite] | null;
-  route: IRouteAll;
-}
-
-const initialState: IState = {
-  search: "",
-  searchedItems: items[site.SMH].sort((a, b) => (a.item > b.item ? 1 : -1)),
-  site: null,
-  route: "/"
-};
-
-const reducer = (state: IState, action: { type: string; payload: any }) => {
-  switch (action.type) {
-    case "SEARCH_INPUT":
-      return { ...state, search: action.payload };
-    case "SEARCH_DATA":
-      return { ...state, searchedItems: action.payload };
-    case "SWITCH_SITE":
-      return { ...state, site: action.payload };
-    case "NAVIGATE":
-      const [navRoute, navigate] = action.payload;
-      navigate(navRoute);
-      return state;
-    default:
-      throw new Error();
-  }
-};
-
-function App() {
-  const [count, setCount] = useState(0);
-
-  const [state, dispatch] = useReducer(reducer, initialState);
+const App = () => {
+  const state = useSites();
+  const dispatch = useSitesDispatch();
   const navigate = useNavigate();
-
-  const handleSearch = (searchStr: string, site: SiteStr) => {
-    dispatch({ type: "SEARCH_INPUT", payload: searchStr });
-    const searchData = items[site]
-      .filter(it =>
-        it.item.toLocaleLowerCase().includes(searchStr.toLocaleLowerCase())
-      )
-      .sort((a, b) => (a.item > b.item ? 1 : -1));
-    dispatch({ type: "SEARCH_DATA", payload: searchData });
-  };
-
-  const switchSites = (site: SiteStr, navRoute: IRoute) => {
-    dispatch({ type: "SWITCH_SITE", payload: site });
-    dispatch({ type: "NAVIGATE", payload: [navRoute, navigate] });
-    handleSearch("", site);
-  };
-
   const { isOpen, onOpen, onClose } = useDisclosure();
+  //a change in url path should be stored in state
+  // when url is changed manually, it could be different from the current state.site
+  // rerender logic should always check first for change in url, then change in site
+  // A change in url should always trigger a change in site
+  // A change in site should navigate
+  let location = useLocation();
+  const site = state.site;
 
-  const NavLink = ({ children }: { children: ReactNode }) => (
-    <Link
-      px={2}
-      py={1}
-      rounded={"md"}
-      boxShadow="xl"
-      bg="white"
-      _hover={{
-        textDecoration: "none",
-        bg: useColorModeValue("gray.200", "gray.700")
-      }}
-      onClick={() =>
-        switchSites(
-          children?.toString() as SiteStr,
-          siteRev[children?.toString() as SiteStr]
-        )
-      }
-    >
-      {children}
-    </Link>
-  );
+  if (!state) {
+    return <></>;
+  }
+  console.debug("*** App.tsx top of function render ***");
+  console.debug("location.pathname: ", location.pathname);
+  console.debug("state.route: ", state.route);
+  console.debug("state.site: ", state.site);
+  useEffect(() => {
+    console.debug("__A useEffect App.tsx -> hide content if route /");
+    if (location.pathname === "/") {
+      dispatch({ type: Types.ContentVisible, payload: false });
+      console.debug("__A hide");
+    } else {
+      dispatch({ type: Types.ContentVisible, payload: true });
+      console.debug("__A show");
+    }
+  }, [state.route]);
+
+  location = useLocation();
+
+  let ignoreUrl = false;
+  useEffect(() => {
+    const navRoute = state.route;
+    console.debug(
+      "__B useEffect App.tsx -> navigate - state.route: ",
+      navRoute
+    );
+
+    navigate("/" + navRoute, { replace: true });
+    console.debug("__B nav called: ", navRoute);
+    if (location.pathname !== "/" + navRoute) {
+      ignoreUrl = true;
+      console.debug("__B set ignoreUrl: ", ignoreUrl);
+    }
+    //dispatch({ type: Types.Navigate, payload: navRoute });
+    //switchSites(navRoute, sites[navRoute], dispatch);
+    //navigate(navRoute);
+  }, [state.route, location.pathname]);
+  location = useLocation();
+
+  useEffect(() => {
+    const navRoute = state.route;
+    console.debug("__B location.pathname: ", location.pathname);
+    if (navRoute !== "/") {
+      console.debug("__B switchSites: ", navRoute);
+      switchSites(navRoute, sites[navRoute], dispatch);
+    }
+    console.debug("__B location.pathname: ", location.pathname);
+  }, [state.route, location.pathname]);
+
+  location = useLocation();
+  useEffect(() => {
+    console.debug(
+      "__C useEffect App.tsx -> switchSites if url isValidRoute - location.pathname: ",
+      location.pathname
+    );
+    const procPath = (path: string): string => {
+      return path.replace("/", "");
+    };
+    const _navRoute = procPath(location.pathname);
+    const navRoute = _navRoute as IRoute;
+    const isValidRoute = validRoute.includes(navRoute);
+    console.debug("__C ignoreUrl: ", ignoreUrl);
+    if (isValidRoute && !ignoreUrl) {
+      console.debug("__C url is valid: ", navRoute);
+      /** Updates state: route, site, search, searchItems */
+      switchSites(navRoute, sites[navRoute], dispatch);
+    }
+  }, [location.pathname, state.route]);
 
   return (
     <>
       <ChakraProvider theme={theme}>
-        {/* <Grid templateColumns="repeat(5, 1fr)" bg="gray.100"> */}
         <Box bg={useColorModeValue("gray.100", "gray.900")} px={6}>
           <Flex h={24} alignItems={"center"} justifyContent={"space-between"}>
             <IconButton
@@ -164,7 +135,7 @@ function App() {
                 spacing={8}
                 display={{ base: "none", md: "flex" }}
               >
-                {Links.map(link => (
+                {Links.map((link: SiteStr) => (
                   <NavLink key={link}>{link}</NavLink>
                 ))}
               </HStack>
@@ -173,80 +144,23 @@ function App() {
           {isOpen ? (
             <Box pb={4} display={{ md: "none" }}>
               <Stack as={"nav"} spacing={4}>
-                {Links.map(link => (
+                {Links.map((link) => (
                   <NavLink key={link}>{link}</NavLink>
                 ))}
               </Stack>
             </Box>
           ) : null}
         </Box>
-        {/* </Grid> */}
-
-        <Box textAlign="left" fontSize="xl">
-          <Grid minH="10vh" p={3}>
-            <VStack spacing={8} align="stretch">
-              <Box
-                textAlign="left"
-                marginRight={8}
-                marginLeft={8}
-                marginTop={5}
-                fontSize="xl"
-                color="purple"
-              >
-                <HStack justify="space-between">
-                  <Heading color="darkgreen">{state.site}</Heading>
-                  <Link
-                    href={`${HOMEPAGEDIR}/posters/${state.site}.pdf`}
-                    isExternal
-                  >
-                    View Poster <ExternalLinkIcon mx="2px" />
-                  </Link>
-                </HStack>
-              </Box>
-              <VStack>
-                <Box textAlign="left" marginLeft={8} fontSize="m">
-                  <Text>
-                    Not sure how to dispose a waste item? Type it into the
-                    searchbar below to find out.
-                  </Text>
-                </Box>
-
-                <Box w="300px">
-                  <SearchBar
-                    onInput={(e: { target: { value: string } }) =>
-                      handleSearch(e.target.value, state.site)
-                    }
-                    value={state.search}
-                    isVisible={state.site === "/" ? false : true}
-                  />
-                </Box>
-              </VStack>
-              <ListView
-                items={state.searchedItems}
-                isVisible={state.site === "/" ? false : true}
-              />
-            </VStack>
-          </Grid>
-        </Box>
-
-        <Box>
-          <Text textAlign="center" margin={8} color="purple">
-            Have a question or concern? Email us at GreenTeam@unityhealth.to
-          </Text>
-        </Box>
+        <Routes>
+          {RoutesArr.map((route: IRouteAll) => {
+            return (
+              <Route key={route} path={"/" + route} element={<SiteContent />} />
+            );
+          })}
+        </Routes>
       </ChakraProvider>
-      <Routes>
-        {RoutesArr.map((route: IRouteAll) => {
-          return (
-            <Route
-              path={route}
-              element={<ListView items={state.searchedItems} />}
-            />
-          );
-        })}
-      </Routes>
     </>
   );
-}
+};
 
 export default App;

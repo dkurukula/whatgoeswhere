@@ -5,13 +5,9 @@ import { FaSearch } from "react-icons/fa";
 export interface ISearchBarProps {
   onInput: any;
   value: string;
-  isVisible: boolean;
 }
 
-export function SearchBar(props: ISearchBarProps) {
-  if (!props.isVisible) {
-    return <></>;
-  } else {
+export const SearchBar = (props: ISearchBarProps) => {
     return (
       <InputGroup>
         <InputLeftElement children={<FaSearch />} />
@@ -23,4 +19,3 @@ export function SearchBar(props: ISearchBarProps) {
       </InputGroup>
     );
   }
-}

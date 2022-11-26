@@ -7,6 +7,7 @@ export enum Types {
   SwitchSite = "SWITCH_SITE",
   Navigate = "NAVIGATE",
   ContentVisible = "CONTENT_VISIBLE",
+  ClickNav = "CLICK_NAV",
 }
 
 export const sites: ISite = {

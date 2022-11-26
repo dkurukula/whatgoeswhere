@@ -23,6 +23,24 @@ export const switchSites = (
   dispatch({ type: Types.SearchInput, payload: "" });
 };
 
+export const switchSitesUrl = (
+  navRoute: IRoute,
+  site: SiteStr,
+  dispatch: React.Dispatch<IState>
+) => {
+  switchSites(navRoute, site, dispatch);
+  dispatch({ type: Types.ClickNav, payload: false });
+};
+
+const switchSitesClickNav = (
+  navRoute: IRoute,
+  site: SiteStr,
+  dispatch: React.Dispatch<IState>
+) => {
+  switchSites(navRoute, site, dispatch);
+  dispatch({ type: Types.ClickNav, payload: true });
+};
+
 export const NavLink = ({ children }: { children: SiteStr }) => {
   const dispatch = useSitesDispatch();
   const navRoute = siteRev[children.toString() as SiteStr];
@@ -40,7 +58,7 @@ export const NavLink = ({ children }: { children: SiteStr }) => {
       }}
       onClick={() => {
         console.debug("=== NAV CLICKED ===   set route to: ", navRoute);
-        switchSites(navRoute, site, dispatch);
+        switchSitesClickNav(navRoute, site, dispatch);
       }}
     >
       {children}

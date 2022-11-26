@@ -1,11 +1,5 @@
 import items from "./data.json";
-import {
-  createContext,
-  useContext,
-  useReducer,
-  Reducer,
-  useEffect,
-} from "react";
+import { createContext, useContext, useReducer, Reducer } from "react";
 import { Types, handleSearch, sites } from "./utils";
 import { useNavigate } from "react-router-dom";
 
@@ -15,6 +9,7 @@ const initialState: IState = {
   site: null,
   route: "/",
   content: false,
+  clickNav: false,
 };
 
 export const sitesReducer: Reducer<IState, SiteActions> = (state, action) => {
@@ -35,6 +30,8 @@ export const sitesReducer: Reducer<IState, SiteActions> = (state, action) => {
       return { ...state, route: navRoute };
     case Types.ContentVisible:
       return { ...state, content: action.payload };
+    case Types.ClickNav:
+      return { ...state, clickNav: action.payload };
     default:
       throw new Error();
   }

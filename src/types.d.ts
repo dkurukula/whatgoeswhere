@@ -4,6 +4,7 @@ enum Types {
   SwitchSite = "SWITCH_SITE",
   Navigate = "NAVIGATE",
   ContentVisible = "CONTENT_VISIBLE",
+  ClickNav = "CLICK_NAV",
 }
 
 type SiteStr =
@@ -30,6 +31,7 @@ type IState = {
   site: ISite[keyof ISite] | null;
   route: IRouteAll;
   content: boolean;
+  clickNav: boolean;
 };
 
 type ActionMap<M extends { [index: string]: any }> = {
@@ -47,6 +49,7 @@ type SitePayload = {
   [Types.SwitchSite]: SiteStr;
   [Types.Navigate]: IRoute;
   [Types.ContentVisible]: boolean;
+  [Types.ClickNav]: boolean;
 };
 
 type SiteActions = ActionMap<SitePayload>[keyof ActionMap<SitePayload>];

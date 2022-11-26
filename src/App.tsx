@@ -1,8 +1,7 @@
 import { useEffect } from "react";
 import { SiteContent } from "./SiteContent";
 import { Types, sites, RouteAll, validRoute } from "./utils";
-import { NavLink, switchSites } from "./Nav";
-import reactLogo from "./assets/react.svg";
+import { NavLink, switchSites, switchSitesUrl } from "./Nav";
 import "./App.css";
 import { SearchBar } from "./components/SearchBar";
 import items from "./data.json";
@@ -31,88 +30,117 @@ const Links: SiteStr[] = [
 
 const RoutesArr: IRouteAll[] = ["SMH", "SJHC", "PHC", "LKS", "/"];
 
+/**
+ * Remove leading url  if not just /
+ *
+ * @param path url from location.pathname
+ * @returns url without leading /
+ */
+const procPath = (path: string): string => {
+  if (path !== "/") {
+    return path.replace("/", "");
+  } else {
+    return path;
+  }
+};
+
+const checkValidUrl = (path: string): IRoute | null => {
+  if (validRoute.includes(path as IRoute)) {
+    return path as IRoute;
+  } else {
+    return null;
+  }
+};
+
 const App = () => {
   const state = useSites();
   const dispatch = useSitesDispatch();
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  //a change in url path should be stored in state
-  // when url is changed manually, it could be different from the current state.site
-  // rerender logic should always check first for change in url, then change in site
-  // A change in url should always trigger a change in site
-  // A change in site should navigate
-  let location = useLocation();
+
+  const location = useLocation();
   const site = state.site;
+  const url = location.pathname;
+  const _url = procPath(url);
+  const clickNav = state.clickNav;
+  let ignoreUrl = false;
 
   if (!state) {
     return <></>;
   }
   console.debug("*** App.tsx top of function render ***");
-  console.debug("location.pathname: ", location.pathname);
+  console.debug("url: ", url);
   console.debug("state.route: ", state.route);
-  console.debug("state.site: ", state.site);
+  console.debug("state.site: ", site);
+  console.debug("ignoreUrl: ", ignoreUrl);
+  console.debug("clickNav: ", clickNav);
+
+  /* Navigate can be triggered in two ways
+   *  - url, external link
+   *  - onClick
+   *
+   * Url change should trigger nav by default
+   * onCLick should trigger override url based nav until url has changed to desired page
+   *
+   */
+
+  /** url chnage should trigger nav unless onClick override (ignoreUrl sest) */
   useEffect(() => {
-    console.debug("__A useEffect App.tsx -> hide content if route /");
-    if (location.pathname === "/") {
-      dispatch({ type: Types.ContentVisible, payload: false });
-      console.debug("__A hide");
+    if (clickNav === false && checkValidUrl(_url) && _url !== state.route) {
+      console.debug(
+        "__ZZ set state.route to url if not already same, if valid url and not clickNav"
+      );
+      console.debug("__ZZ url: ", _url);
+      const validUrl = _url as IRoute;
+      console.debug("__ZZ url is valid");
+      console.debug("__ZZ call switchSites: ", validUrl);
+      console.debug("    Updates state: route, site, search, searchItems");
+      switchSitesUrl(validUrl, sites[validUrl], dispatch);
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (clickNav === true) {
+      if (checkValidUrl(state.route)) {
+        console.debug(
+          "__A useEffect App.tsx -> hide content if route not valid"
+        );
+        console.debug("__A state.route: ", state.route);
+        dispatch({ type: Types.ContentVisible, payload: true });
+        console.debug("__A show");
+      } else {
+        dispatch({ type: Types.ContentVisible, payload: false });
+        console.debug("__A hide");
+      }
     } else {
-      dispatch({ type: Types.ContentVisible, payload: true });
-      console.debug("__A show");
+      if (checkValidUrl(_url)) {
+        console.debug("__A useEffect App.tsx -> hide content if url not valid");
+        dispatch({ type: Types.ContentVisible, payload: true });
+        console.debug("__A show");
+      } else {
+        dispatch({ type: Types.ContentVisible, payload: false });
+        console.debug("__A hide");
+      }
     }
   }, [state.route]);
 
-  location = useLocation();
-
-  let ignoreUrl = false;
   useEffect(() => {
     const navRoute = state.route;
-    console.debug(
-      "__B useEffect App.tsx -> navigate - state.route: ",
-      navRoute
-    );
-
-    navigate("/" + navRoute, { replace: true });
-    console.debug("__B nav called: ", navRoute);
-    if (location.pathname !== "/" + navRoute) {
-      ignoreUrl = true;
-      console.debug("__B set ignoreUrl: ", ignoreUrl);
+    if (clickNav === true && checkValidUrl(navRoute)) {
+      console.debug(
+        "__B execute nav when state.route is changed to valid route and clickNav"
+      );
+      console.debug(
+        "__B useEffect App.tsx -> navigate - state.route: ",
+        navRoute
+      );
+      console.debug("__B call nav: ", navRoute);
+      console.debug("    react router useNavigate called with: ", navRoute);
+      navigate(navRoute, { state: state.route });
+      console.debug("__B call reset clickNav to false");
+      dispatch({ type: Types.ClickNav, payload: false });
     }
-    //dispatch({ type: Types.Navigate, payload: navRoute });
-    //switchSites(navRoute, sites[navRoute], dispatch);
-    //navigate(navRoute);
-  }, [state.route, location.pathname]);
-  location = useLocation();
-
-  useEffect(() => {
-    const navRoute = state.route;
-    console.debug("__B location.pathname: ", location.pathname);
-    if (navRoute !== "/") {
-      console.debug("__B switchSites: ", navRoute);
-      switchSites(navRoute, sites[navRoute], dispatch);
-    }
-    console.debug("__B location.pathname: ", location.pathname);
-  }, [state.route, location.pathname]);
-
-  location = useLocation();
-  useEffect(() => {
-    console.debug(
-      "__C useEffect App.tsx -> switchSites if url isValidRoute - location.pathname: ",
-      location.pathname
-    );
-    const procPath = (path: string): string => {
-      return path.replace("/", "");
-    };
-    const _navRoute = procPath(location.pathname);
-    const navRoute = _navRoute as IRoute;
-    const isValidRoute = validRoute.includes(navRoute);
-    console.debug("__C ignoreUrl: ", ignoreUrl);
-    if (isValidRoute && !ignoreUrl) {
-      console.debug("__C url is valid: ", navRoute);
-      /** Updates state: route, site, search, searchItems */
-      switchSites(navRoute, sites[navRoute], dispatch);
-    }
-  }, [location.pathname, state.route]);
+  }, [state.route]);
 
   return (
     <>

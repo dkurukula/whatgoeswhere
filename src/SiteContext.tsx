@@ -38,7 +38,7 @@ export const sitesReducer: Reducer<IState, SiteActions> = (state, action) => {
 };
 
 export const SitesContext = createContext<IState>(initialState);
-export const SitesDispatchContext = createContext<React.Dispatch<IState>>(
+export const SitesDispatchContext = createContext<React.Dispatch<SiteActions>>(
   () => initialState
 );
 

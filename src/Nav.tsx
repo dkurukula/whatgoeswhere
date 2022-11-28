@@ -16,7 +16,7 @@ const siteRev: Record<SiteStr, IRoute> = {
 export const switchSites = (
   navRoute: IRoute,
   site: SiteStr,
-  dispatch: React.Dispatch<IState>
+  dispatch: React.Dispatch<SiteActions>
 ) => {
   dispatch({ type: Types.Navigate, payload: navRoute });
   dispatch({ type: Types.SwitchSite, payload: site });
@@ -26,7 +26,7 @@ export const switchSites = (
 export const switchSitesUrl = (
   navRoute: IRoute,
   site: SiteStr,
-  dispatch: React.Dispatch<IState>
+  dispatch: React.Dispatch<SiteActions>
 ) => {
   switchSites(navRoute, site, dispatch);
   dispatch({ type: Types.ClickNav, payload: false });
@@ -35,7 +35,7 @@ export const switchSitesUrl = (
 const switchSitesClickNav = (
   navRoute: IRoute,
   site: SiteStr,
-  dispatch: React.Dispatch<IState>
+  dispatch: React.Dispatch<SiteActions>
 ) => {
   switchSites(navRoute, site, dispatch);
   dispatch({ type: Types.ClickNav, payload: true });

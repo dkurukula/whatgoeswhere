@@ -28,9 +28,6 @@ jobs:
     - name: Combine json files
       run: npm run create/data 
 
-    - name: Run tests
-      run: npm test
-
     - name: Build project
       run: npm run build
 

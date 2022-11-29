@@ -72,7 +72,8 @@ export const SiteContent: FunctionComponent = () => {
 
         <Box>
           <Text textAlign="center" margin={8} color="purple">
-            Have a question or concern? Email us at GreenTeam@unityhealth.to
+            Have a question or concern? Email us at
+            Sustainability@unityhealth.to
           </Text>
         </Box>
       </>

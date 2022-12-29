@@ -10,7 +10,7 @@
     "test": "vitest",
     "create/data": "tsc --esModuleInterop --resolveJsonModule ./combine-data.ts && mv ./combine-data.js ./combine-data.cjs && node ./combine-data.cjs && rm ./combine-data.cjs"
   },
-  "homepage": "https://dkurukula.github.io/whatgoeswhere/",
+  "homepage": "https://uhtgreenteam.github.io/whatgoeswhere/",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.12",
     "@chakra-ui/react": "^2.4.1",

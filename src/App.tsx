@@ -16,6 +16,7 @@ import {
   HStack,
   Flex,
   IconButton,
+  Text,
   theme,
 } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
@@ -57,7 +58,6 @@ const App = () => {
   const dispatch = useSitesDispatch();
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   const location = useLocation();
   const site = state.site;
   const url = location.pathname;
@@ -142,6 +142,10 @@ const App = () => {
     }
   }, [state.route]);
 
+  useEffect(() => {
+    onOpen();
+  }, []);
+
   return (
     <>
       <ChakraProvider theme={theme}>
@@ -179,6 +183,14 @@ const App = () => {
             </Box>
           ) : null}
         </Box>
+        {url === "/" && state.route === "/" && state.site === null ? (
+          <Stack spacing={3}>
+            <br />
+            <Text fontSize="3xl">
+              Please select a location above to get started
+            </Text>
+          </Stack>
+        ) : null}
         <Routes>
           {RoutesArr.map((route: IRouteAll) => {
             return (

@@ -31,9 +31,6 @@ jobs:
     - name: Build project
       run: npm run build
 
-    - name: Copy icon to build dir
-      run: cp ./public/uht_favicon_96x96.ico ./dist
-
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2
       with:

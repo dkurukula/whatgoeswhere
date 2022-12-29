@@ -30,9 +30,6 @@ jobs:
 
     - name: Build project
       run: npm run build
-      
-    - name: update index.html
-      run: sed -i 's/assets/whatgoeswhere\/assets/g' dist/index.html
 
     - name: Copy icon to build dir
       run: cp ./public/uht_favicon_96x96.ico ./dist
